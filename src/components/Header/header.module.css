@@ -1,0 +1,95 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0;
+    margin: 0;
+    width: 100%;
+}
+
+.title {
+    font-size: 5rem;
+    font-family: var(--font-amaranth);
+    color: var(--black);
+    font-weight: 500;
+}
+
+.nav {
+    display: flex;
+    gap: 8rem;
+    color: var(--text);
+}
+
+.linkNav {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: var(--font-ebgaramond);
+}
+
+/* -------- Responsividade -------- */
+
+/* Dispositivos Pequenos */
+@media (min-width: 330px) and (max-width: 767px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .title {
+        margin-bottom: 1rem;
+        font-size: 1.6rem;
+    }
+    
+    .nav {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2rem;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .linkNav {
+        font-size: 0.9rem;
+    }
+}
+
+/* Dispositivos Médios */
+@media (min-width: 768px) {
+    .header {
+        justify-content: space-between;
+        padding: 1.5rem 2rem;
+    }
+    .title {
+        font-size: 1.5rem;
+    }
+    .nav {
+        gap: 3rem;
+    }
+    .linkNav {
+        font-size: 1rem;
+    }
+}
+
+/* Dispositivos Grandes */
+@media (min-width: 992px) {
+    .header {
+        padding: 2rem 4rem;
+    }
+    .title {
+        font-size: 2rem;
+    }
+    .nav {
+        gap: 4rem;
+    }
+    .linkNav {
+        font-size: 1.2rem;
+    }
+}
