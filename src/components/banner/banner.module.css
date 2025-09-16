@@ -1,0 +1,147 @@
+.bannerContainer {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.bannerContent {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bannerImage {
+    position: relative;
+    width: 80%;
+    height: 85%;
+    border-radius: 12px;
+    margin-left: 10rem;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.catarratasImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bannerText {
+    position: absolute;
+    left: 0;
+    top: 75%;
+    transform: translateX(-10%);
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 25px 35px;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bannerText h1 {
+    font-size: 3.5rem;
+    font-family: var(--font-amaranth);
+    font-weight: 500;
+    margin: 0;
+    color: #333;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.brasil {
+    color: var(--highlights-primary);
+}
+
+/* -------- Responsividade -------- */
+
+/* Dispositivos Pequenos */
+@media (min-width: 330px) and (max-width: 767px) {
+    .bannerContainer {
+        height: 400px;
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .bannerContent {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+        height: auto;
+    }
+
+    .bannerImage {
+        width: 100%;
+        height: 250px;
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    .bannerText {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        align-self: center;
+        text-align: center;
+        padding: 20px 25px;
+        margin-top: -2rem;
+        width: 90%;
+    }
+
+    .bannerText h1 {
+        font-size: 2.5rem;
+        white-space: normal;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .bannerContainer {
+        height: 450px;
+        padding: 0 3%;
+    }
+
+    .bannerImage {
+        width: 75%;
+        height: 80%;
+        margin-left: 6rem;
+    }
+
+    .bannerText {
+        left: 2%;
+        top: 70%;
+        transform: translateX(-5%);
+        padding: 20px 30px;
+    }
+
+    .bannerText h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Telas Grandes */
+@media (min-width: 1025px) {
+    .bannerContainer {
+        height: 500px;
+    }
+
+    .bannerImage {
+        margin-left: 10rem;
+    }
+
+    .bannerText {
+        left: 0;
+        top: 75%;
+        transform: translateX(-10%);
+    }
+}
