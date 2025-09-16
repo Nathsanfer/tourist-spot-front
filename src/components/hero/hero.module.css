@@ -1,0 +1,191 @@
+.heroContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+}
+
+.heroContent {
+	display: flex;
+	flex-direction: row;
+	gap: 48px;
+	align-items: center;
+	width: 70%;
+	padding: 32px 24px;
+}
+
+.heroText {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 16px;
+	width: 40%;
+	height: 100%;
+}
+
+.heroText h1 {
+	font-size: 4rem;
+	font-family: var(--font-amaranth);
+	font-weight: 500;
+	line-height: 1.1;
+	margin-bottom: 8px;
+}
+
+.lineBreak::after {
+	content: "\A";
+	white-space: pre;
+}
+
+.brasil {
+	color: var(--highlights-primary);
+}
+
+.heroDescription {
+	font-size: 1rem;
+	color: var(--text);
+	font-family: var(--font-ebgaramond);
+	margin-bottom: 16px;
+}
+
+.heroButton {
+	background: var(--highlights-primary);
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	padding: 12px 24px;
+	font-size: 1rem;
+	font-weight: 600;
+	font-family: var(--font-ebgaramond);
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.heroButton:hover {
+	background: var(--highlights-secondary);
+}
+
+.heroImages {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: 55.5%;
+}
+
+.heroTopImages {
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+}
+
+.heroBottomImages {
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+}
+
+.heroImg {
+	border-radius: 16px;
+	object-fit: cover;
+}
+
+/* -------- Responsividade -------- */
+
+/* Dispositivos Pequenos */
+@media (min-width: 330px) and (max-width: 767px) {
+	.heroContent {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 32px;
+		width: 95%;
+		padding: 0 0;
+		gap: 1rem;
+	}
+
+	.heroText {
+		width: 100%;
+		text-align: center;
+	}
+
+	.heroText h1 {
+		font-size: 2.2rem;
+	}
+
+	.lineBreak::after {
+		content: " ";
+		white-space: normal;
+	}
+
+	.heroImages {
+		width: 100%;
+		align-items: center;
+		margin-top: 3rem;
+	}
+
+	.heroImg {
+		width: auto;
+		height: auto;
+		max-width: 280px;
+		max-height: 200px;
+	}
+
+	.aviaoImg {
+		width: 280px;
+		height: 190px;
+	}
+}
+
+/* Dispositivos Médios */
+@media (min-width: 768px) and (max-width: 991px) {
+	.heroContent {
+		width: 95%;
+		padding: 0 0;
+		margin-top: 2rem;
+	}
+
+	.heroText {
+		width: 45%;
+	}
+
+	.heroText h1 {
+		font-size: 2.5rem;
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+
+	.heroImages {
+		width: 55%;
+	}
+
+	.heroImg {
+		width: auto;
+		height: auto;
+		max-width: 220px;
+		max-height: 200px;
+	}
+
+	.aviaoImg {
+		width: 220px;
+		height: 150px;
+	}
+}
+
+/* Dispositivos Grandes */
+@media (min-width: 992px) {
+	.heroContent {
+		width: 95%;
+		padding: 0 0;
+		justify-content: space-between;
+	}
+	
+	.heroText {
+		width: 45%;
+	}
+
+	.heroImages {
+		width: 55%;
+		display: flex;
+		padding: 0 4.3rem;
+	}
+	
+}

@@ -14,4 +14,5 @@ html, body {
   margin: 0;
   background-color: rgb(255, 255, 255);
   padding: 0;
+  overflow-x: hidden;
 }
