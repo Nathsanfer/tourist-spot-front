@@ -24,8 +24,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-BR" className={`${amaranth.variable} ${ebGaramond.variable}`}>
-      <body>
+    <html className={`${amaranth.variable} ${ebGaramond.variable}`}>
+      <body cz-shortcut-listen="true">
         <main>{children}</main>
       </body>
     </html>

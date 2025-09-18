@@ -2,8 +2,8 @@ import styles from "./page.module.css";
 
 import Image from "next/image";
 
-import Header from "../components/header/page.jsx";
-import Hero from "../components/hero/page.jsx";
+import Header from "../components/Header/Header.jsx";
+import Hero from "../components/Hero/Hero.jsx";
 
 export default function Home() {
   return (

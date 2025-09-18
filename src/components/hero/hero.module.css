@@ -1,4 +1,5 @@
-.heroContainer {
+  
+  .heroContainer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -188,4 +189,83 @@
 		padding: 0 4.3rem;
 	}
 	
+}
+
+/* Dispositivos Extra Grandes */
+@media (min-width: 1200px) {
+	.heroContent {
+		width: 95%;
+		padding: 0 0;
+	}
+
+	.heroText {
+		width: 40%;
+	}
+
+	.heroText h1 {
+		font-size: 3rem;
+	}
+
+	.heroDescription {
+		font-size: 1rem;
+	}
+
+	.heroImages {
+		width: 60%;
+		display: flex;
+		padding: 0 4.3rem;
+	}
+
+	.heroImg {
+		width: auto;
+		height: auto;
+		max-width: 320px;
+		max-height: 200px;
+	}
+
+	.aviaoImg {
+		width: 420px;
+		height: 200px;
+	}
+
+}
+
+/* Dispositivos Ultra Grandes */
+@media (min-width: 1600px) {
+	.heroContent {
+		width: 80%;
+		padding: 0 0;
+		margin-top: 3rem;
+	}
+
+	.heroText {
+		width: 40%;
+	}
+
+	.heroText h1 {
+		font-size: 4rem;
+	}
+
+	.heroDescription {
+		font-size: 1.1rem;
+	}
+
+	.heroImages {
+		width: 60%;
+		display: flex;
+		padding: 0 8.3rem;
+		
+	}
+
+	.heroImg {
+		width: auto;
+		height: auto;
+		max-width: 420px;
+		max-height: 200px;
+	}
+
+	.aviaoImg {
+		width: 350px;
+		height: 200px;
+	}
 }
