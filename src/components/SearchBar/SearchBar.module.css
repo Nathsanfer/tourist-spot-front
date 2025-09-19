@@ -65,7 +65,7 @@
 .filterButtons {
     display: flex;
     gap: 12px;
-    width: 80%;
+    width: 100% !important;
     flex-wrap: wrap;
     justify-content: space-between;
 }

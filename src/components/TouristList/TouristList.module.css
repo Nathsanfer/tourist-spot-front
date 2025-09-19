@@ -1,0 +1,79 @@
+.cardsSection {
+    background: #ffffff;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cardsContainer {
+    width: 90%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Responsividade para o grid */
+/* Desktop extra grande (1400px+) - 4 cards */
+@media (min-width: 1400px) {
+    .cardsContainer {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 35px;
+    }
+}
+
+/* Desktop grande (1200px - 1399px) - 4 cards */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .cardsContainer {
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 30px;
+    }
+}
+
+/* Desktop médio (992px - 1199px) - 3 cards */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .cardsContainer {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 25px;
+    }
+}
+
+/* Tablet grande (768px - 991px) - 3 cards */
+@media (min-width: 768px) and (max-width: 991px) {
+    .cardsContainer {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 20px;
+    }
+}
+
+/* Tablet pequeno (576px - 767px) - 2 cards */
+@media (min-width: 576px) and (max-width: 767px) {
+    .cardsContainer {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px;
+        width: 95%;
+    }
+}
+
+/* Mobile grande (480px - 575px) - 2 cards */
+@media (min-width: 480px) and (max-width: 575px) {
+    .cardsContainer {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px;
+        width: 95%;
+    }
+}
+
+/* Mobile pequeno (até 479px) - 1 card */
+@media (max-width: 479px) {
+    .cardsContainer {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+        width: 95%;
+    }
+    
+    .cardsSection {
+        padding: 30px 0;
+    }
+}
