@@ -5,6 +5,7 @@ import styles from "./pontosTuristicos.module.css";
 
 import Header from "../../../components/Header/Header.jsx";
 import Banner from "../../../components/Banner/Banner.jsx";
+import SearchBar from "../../../components/SearchBar/SearchBar.jsx";
 
 export default function PontosTuristicos() {
     const [spots, setSpots] = useState([]);   // pontos turísticos
@@ -35,28 +36,7 @@ return (
         <Header />
         <Banner />
 
-        {/* Seção de busca */}
-        <section className={styles.searchSection}>
-            <div className={styles.searchContainer}>
-                <div className={styles.searchBar}>
-                    <input
-                        type="text"
-                        placeholder="Encontre pontos turísticos..."
-                        className={styles.searchInput}
-                    />
-                    <button className={styles.searchButton}>🔍</button>
-                </div>
-
-                <div className={styles.filterButtons}>
-                    <button className={`${styles.filterBtn} ${styles.active}`}>Todos</button>
-                    <button className={styles.filterBtn}>Norte</button>
-                    <button className={styles.filterBtn}>Nordeste</button>
-                    <button className={styles.filterBtn}>Centro-Oeste</button>
-                    <button className={styles.filterBtn}>Sudeste</button>
-                    <button className={styles.filterBtn}>Sul</button>
-                </div>
-            </div>
-        </section>
+        <SearchBar />
 
         {/* Seção dos cards */}
         <section className={styles.cardsSection}>
