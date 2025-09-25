@@ -6,6 +6,7 @@ import Header from "../../../components/Header/Header.jsx";
 import Banner from "../../../components/Banner/Banner.jsx";
 import SearchBar from "../../../components/SearchBar/SearchBar.jsx";
 import TouristList from "../../../components/TouristList/TouristList.jsx";
+import RegionBanner from "../../../components/RegionBanner/RegionBanner.jsx";
 
 export default function PontosTuristicos() {
   const [spots, setSpots] = useState([]);
@@ -36,6 +37,7 @@ export default function PontosTuristicos() {
       <Header />
       <Banner />
       <SearchBar />
+      <RegionBanner />
       <TouristList spots={spots} loading={loading} error={error} />
       
     </div>

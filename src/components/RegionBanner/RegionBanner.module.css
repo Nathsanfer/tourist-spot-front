@@ -1,0 +1,126 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.textBlock h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.textBlock p {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.buttons button {
+  background: #f5f5f5;
+  border: none;
+  border-radius: 20px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.buttons button:hover {
+  background: #e5e5e5;
+}
+
+.active {
+  background: #00cc66;
+  color: white;
+  font-weight: 600;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.cardImg {
+  border-radius: 16px 0 0 16px;
+  object-fit: cover;
+}
+
+.cardText {
+  padding: 1.5rem;
+}
+
+.cardText h3 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.cardText p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.cardBtn {
+  background: #00cc66;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.cardBtn:hover {
+  background: #00994d;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .cardImg {
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+  }
+}
