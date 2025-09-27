@@ -39,7 +39,7 @@ export default function PontosTuristicos() {
       <SearchBar />
       <RegionBanner />
       <TouristList spots={spots} loading={loading} error={error} />
-      
+      <RegionBanner />
     </div>
   );
 }

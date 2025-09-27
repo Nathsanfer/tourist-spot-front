@@ -1,16 +1,16 @@
 .cardsSection {
-    background: #ffffff;
     padding: 50px 0;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .cardsContainer {
-    width: 90%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 1480px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr) !important;
-    gap: 30px;
     justify-items: center;
 }
 
@@ -19,7 +19,7 @@
 @media (min-width: 1400px) {
     .cardsContainer {
         grid-template-columns: repeat(4, 1fr) !important;
-        gap: 35px;
+        gap: 15px;
     }
 }
 
