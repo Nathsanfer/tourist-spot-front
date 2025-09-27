@@ -68,3 +68,11 @@
     font-family: var(--font-amaranth);
     line-height: 1.3;
 }
+
+.cardLink {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    width: fit-content;
+    height: fit-content;
+}

@@ -13,15 +13,6 @@ export default function SearchBar() {
           />
           <button className={styles.searchButton}>🔍</button>
         </div>
-
-        <div className={styles.filterButtons}>
-          <button className={`${styles.filterBtn} ${styles.active}`}>Todos</button>
-          <button className={styles.filterBtn}>Norte</button>
-          <button className={styles.filterBtn}>Nordeste</button>
-          <button className={styles.filterBtn}>Centro-Oeste</button>
-          <button className={styles.filterBtn}>Sudeste</button>
-          <button className={styles.filterBtn}>Sul</button>
-        </div>
       </div>
     </section>
   );

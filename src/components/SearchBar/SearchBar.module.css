@@ -62,39 +62,6 @@
     background: var(--highlights-secondary);
 }
 
-.filterButtons {
-    display: flex;
-    gap: 12px;
-    width: 100% !important;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.filterBtn {
-    padding: 12px 40px;
-    border: none;
-    border-radius: 25px;
-    background: var(--highlights-secondary);
-    color: white;
-    font-size: 1rem;
-    font-family: var(--font-ebgaramond);
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(107, 163, 208, 0.3);
-}
-
-.filterBtn:hover {
-    background: var(--highlights-primary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(107, 163, 208, 0.4);
-}
-
-.filterBtn.active {
-    background: var(--highlights-primary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
 /* -------- Responsividade -------- */
 
 /* Dispositivos Pequenos */
@@ -119,24 +86,11 @@
         right: 8px;
     }
 
-    .filterButtons {
-        gap: 8px;
-    }
-
-    .filterBtn {
-        padding: 10px 18px;
-        font-size: 0.85rem;
-    }
 }
 
 /* Tablets */
 @media (min-width: 768px) and (max-width: 1024px) {
     .searchContainer {
         width: 85%;
-    }
-
-    .filterBtn {
-        padding: 11px 20px;
-        font-size: 0.9rem;
     }
 }
