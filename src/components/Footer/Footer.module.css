@@ -1,0 +1,118 @@
+.footer {
+    background-color: var(--white);
+    padding: 2rem 0;
+    border-top: 1px solid #e5e5e5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.inner {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.container {
+    margin: 0 auto;
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.brandName {
+    font-family: var(--font-amaranth);
+    font-size: 1.6rem;
+    color: var(--highlights-primary);
+    margin: 0;
+    font-weight: 500;
+}
+
+.socialMedia {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: var(--highlights-primary);
+}
+
+.socialLink:hover {
+    background-color: #e8e8e8;
+    transform: scale(1.1);
+    color: var(--highlights-secondary);
+}
+
+.divider {
+    height: 80px;
+    background-color: #e5e5e5;
+    width: 1px;
+    margin-left: 1.9rem;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+.description {
+    font-family: var(--font-comfortaa);
+    font-size: 0.92rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.copyright p {
+    font-family: var(--font-comfortaa);
+    font-size: 0.9rem;
+    color: #888;
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .socialMedia {
+        justify-content: center;
+    }
+    
+    .content {
+        padding: 0 1rem;
+    }
+    
+    .description {
+        font-size: 0.9rem;
+    }
+}
