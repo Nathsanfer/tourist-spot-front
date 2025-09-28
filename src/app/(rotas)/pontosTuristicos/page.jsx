@@ -2,12 +2,17 @@
 
 import { useEffect, useState } from "react";
 
+// Importando componente do Ant Design
+import { Spin } from "antd";
+
+// Importando os componentes necessários
 import Header from "../../../components/Header/Header.jsx";
 import Banner from "../../../components/Banner/Banner.jsx";
 import SearchBar from "../../../components/SearchBar/SearchBar.jsx";
 import TouristList from "../../../components/TouristList/TouristList.jsx";
 import RegionBanner from "../../../components/RegionBanner/RegionBanner.jsx";
 
+// Importando dados de configuração das regiões
 import { regionConfigs } from "../../../data/regionData.jsx";
 
 export default function PontosTuristicos() {
@@ -46,7 +51,24 @@ export default function PontosTuristicos() {
         <Header />
         <Banner />
         <SearchBar />
-        <p>Carregando pontos turísticos...</p>
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          minHeight: '400px',
+          flexDirection: 'column',
+          gap: '16px'
+        }}>
+          <Spin size="large" />
+          <p style={{ 
+            fontSize: '16px', 
+            color: '#666', 
+            margin: 0,
+            fontFamily: 'var(--font-comfortaa)'
+          }}>
+            Carregando pontos turísticos...
+          </p>
+        </div>
       </div>
     );
   }
@@ -57,7 +79,30 @@ export default function PontosTuristicos() {
         <Header />
         <Banner />
         <SearchBar />
-        <p style={{ color: "red" }}>{error}</p>
+        <div style={{ 
+          display: 'flex', 
+          justifyContent: 'center', 
+          alignItems: 'center', 
+          minHeight: '400px',
+          flexDirection: 'column',
+          gap: '16px'
+        }}>
+          <div style={{ 
+            fontSize: '48px',
+            color: '#ff4d4f'
+          }}>
+            ⚠️
+          </div>
+          <p style={{ 
+            fontSize: '16px', 
+            color: '#ff4d4f', 
+            margin: 0,
+            fontFamily: 'var(--font-comfortaa)',
+            textAlign: 'center'
+          }}>
+            Erro ao carregar pontos turísticos: {error}
+          </p>
+        </div>
       </div>
     );
   }
@@ -69,26 +114,12 @@ export default function PontosTuristicos() {
       <SearchBar />
       
       {uniqueRegions.map((region) => {
-        const config = regionConfigs[region] || {
-          subtitle: `O melhor da região ${region}`,
-          description: `Explore as belezas e atrações únicas da região ${region}.`,
-          highlight: `Descubra os encantos e pontos turísticos da região ${region}.`,
-          leftImage: "/images/hero1.png",
-          leftImageAlt: `Paisagem da região ${region}`,
-          topDestinationImage: "/images/hero2.png",
-          topDestinationImageAlt: `Top destino da região ${region}`,
-          highlightImage: "/images/hero3.png",
-          highlightImageAlt: `Destaque da região ${region}`,
-          tallImage: "/images/hero4.png",
-          tallImageAlt: `Vista da região ${region}`,
-          highlights: ["Belezas Naturais", "Cultura Local", "Gastronomia Regional", "Aventuras Únicas"],
-          stats: [
-            { icon: "🗺️", number: "N/A", label: "Estados" },
-            { icon: "🌡️", number: "N/A", label: "Média anual" },
-            { icon: "📍", number: "N/A", label: "Pontos turísticos" },
-            { icon: "⭐", number: "N/A", label: "Avaliações" }
-          ]
-        };
+        const config = regionConfigs[region];
+        
+        if (!config) {
+          console.warn(`Configuração não encontrada para a região: ${region}`);
+          return null;
+        }
         
         return (
           <div key={region}>

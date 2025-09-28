@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Spin } from "antd";
 import styles from "./TouristSpotDetail.module.css";
 import HeroArticle from "@/components/HeroArticle/HeroArticle.jsx";
 
@@ -65,24 +66,93 @@ export default function TouristSpotDetail({ spotId }) {
 
   if (loading) {
     return (
-      <div className={styles.loadingContainer}>
-        <p>Carregando detalhes do ponto turístico...</p>
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        minHeight: '100vh',
+        flexDirection: 'column',
+        gap: '24px',
+        backgroundColor: '#f5f5f5'
+      }}>
+        <Spin 
+          size="large" 
+          style={{ 
+            transform: 'scale(2)',
+            marginBottom: '20px'
+          }} 
+        />
+        <p style={{ 
+          fontSize: '18px', 
+          color: '#666', 
+          margin: 0,
+          fontFamily: 'var(--font-comfortaa)',
+          fontWeight: '500'
+        }}>
+          Carregando detalhes do ponto turístico...
+        </p>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className={styles.errorContainer}>
-        <p className={styles.errorText}>Erro: {error}</p>
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        minHeight: '100vh',
+        flexDirection: 'column',
+        gap: '24px',
+        backgroundColor: '#f5f5f5'
+      }}>
+        <div style={{ 
+          fontSize: '48px',
+          color: '#ff4d4f'
+        }}>
+          ⚠️
+        </div>
+        <p style={{ 
+          fontSize: '18px', 
+          color: '#ff4d4f', 
+          margin: 0,
+          fontFamily: 'var(--font-comfortaa)',
+          fontWeight: '500',
+          textAlign: 'center'
+        }}>
+          Erro ao carregar detalhes: {error}
+        </p>
       </div>
     );
   }
 
   if (!spot) {
     return (
-      <div className={styles.notFoundContainer}>
-        <p>Ponto turístico não encontrado.</p>
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        minHeight: '100vh',
+        flexDirection: 'column',
+        gap: '24px',
+        backgroundColor: '#f5f5f5'
+      }}>
+        <div style={{ 
+          fontSize: '48px',
+          color: '#faad14'
+        }}>
+          🔍
+        </div>
+        <p style={{ 
+          fontSize: '18px', 
+          color: '#666', 
+          margin: 0,
+          fontFamily: 'var(--font-comfortaa)',
+          fontWeight: '500',
+          textAlign: 'center'
+        }}>
+          Ponto turístico não encontrado.
+        </p>
       </div>
     );
   }
