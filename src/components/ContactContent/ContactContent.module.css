@@ -1,0 +1,328 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+/* Seção Principal */
+.mainSection {
+    margin-bottom: 5rem;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.sectionTitle {
+    font-size: 2.2rem;
+    font-family: var(--font-amaranth);
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.sectionDescription {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+    font-family: var(--font-comfortaa);
+    margin-bottom: 2rem;
+}
+
+/* Formulário */
+.form {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+.label {
+    font-size: 1rem;
+    font-family: var(--font-amaranth);
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input,
+.select,
+.textarea {
+    padding: 1rem;
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: var(--font-comfortaa);
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+    outline: none;
+    border-color: var(--highlights-primary);
+    box-shadow: 0 0 0 3px rgba(90, 159, 212, 0.1);
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    background: var(--highlights-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-family: var(--font-amaranth);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.submitButton:hover {
+    background: #4a8bc2;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(90, 159, 212, 0.3);
+}
+
+.buttonIcon {
+    font-size: 1rem;
+}
+
+/* Seção de Informações */
+.infoSection {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.infoCard,
+.reasonsCard {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #f0f0f0;
+}
+
+.infoTitle {
+    font-size: 1.4rem;
+    font-family: var(--font-amaranth);
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.infoText {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    font-family: var(--font-comfortaa);
+    margin-bottom: 1.5rem;
+}
+
+/* Redes Sociais */
+.socialSection {
+    padding-top: 1.5rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.socialTitle {
+    font-size: 1.1rem;
+    font-family: var(--font-amaranth);
+    color: #333;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 1rem;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: var(--highlights-primary);
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.socialLink:hover {
+    background: #4a8bc2;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(90, 159, 212, 0.3);
+}
+
+/* Lista de Razões */
+.reasonsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.reasonItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.reasonIcon {
+    font-size: 1.3rem;
+    color: var(--highlights-primary);
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+}
+
+.reasonTitle {
+    font-size: 1.1rem;
+    font-family: var(--font-amaranth);
+    color: #333;
+    margin: 0 0 0.3rem 0;
+    font-weight: 500;
+}
+
+.reasonText {
+    font-size: 0.95rem;
+    color: #666;
+    font-family: var(--font-comfortaa);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Seção FAQ */
+.faqSection {
+    background: #f8f9fa;
+    padding: 3rem;
+    border-radius: 20px;
+    margin-top: 3rem;
+}
+
+.faqTitle {
+    font-size: 2.2rem;
+    font-family: var(--font-amaranth);
+    color: #333;
+    text-align: center;
+    margin-bottom: 3rem;
+    font-weight: 600;
+}
+
+.faqGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.faqItem {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.faqQuestion {
+    font-size: 1.2rem;
+    font-family: var(--font-amaranth);
+    color: #333;
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+}
+
+.faqAnswer {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    font-family: var(--font-comfortaa);
+    margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 2rem 1rem;
+    }
+
+    .form {
+        padding: 2rem 1.5rem;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .sectionTitle {
+        font-size: 1.8rem;
+    }
+
+    .faqSection {
+        padding: 2rem 1.5rem;
+    }
+
+    .faqGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .socialLinks {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .form {
+        padding: 1.5rem 1rem;
+    }
+
+    .infoCard,
+    .reasonsCard {
+        padding: 1.5rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.6rem;
+    }
+
+    .faqTitle {
+        font-size: 1.8rem;
+    }
+}
