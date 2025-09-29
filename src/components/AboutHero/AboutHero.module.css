@@ -1,0 +1,140 @@
+.hero {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.heroBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+
+.heroOverlay {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.heroContent {
+    text-align: center;
+    color: white;
+    max-width: 800px;
+}
+
+.heroTitle {
+    font-size: 3.5rem;
+    font-family: var(--font-amaranth);
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.heroSubtitle {
+    font-size: 1.4rem;
+    font-family: var(--font-comfortaa);
+    margin: 0 0 3rem 0;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.heroStats {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.stat {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.statNumber {
+    font-size: 2.5rem;
+    font-family: var(--font-amaranth);
+    font-weight: 700;
+    color: var(--highlights-primary);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.statLabel {
+    font-size: 1rem;
+    font-family: var(--font-comfortaa);
+    color: white;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    .heroTitle {
+        font-size: 2.5rem;
+    }
+
+    .heroSubtitle {
+        font-size: 1.2rem;
+    }
+
+    .heroStats {
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .statNumber {
+        font-size: 2rem;
+    }
+
+    .statLabel {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .heroOverlay {
+        padding: 1rem;
+    }
+
+    .heroTitle {
+        font-size: 2rem;
+    }
+
+    .heroSubtitle {
+        font-size: 1.1rem;
+    }
+
+    .heroStats {
+        gap: 1.5rem;
+    }
+
+    .statNumber {
+        font-size: 1.8rem;
+    }
+}

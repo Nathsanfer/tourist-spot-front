@@ -9,7 +9,7 @@ function Header() {
       <nav className={styles.nav}>
         <Link href="/" className={styles.linkNav}>Home</Link>
         <Link href="/pontosTuristicos" className={styles.linkNav}>Pontos Turísticos</Link>
-        <Link href="#" className={styles.linkNav}>Sobre Mim</Link>
+        <Link href="/sobre" className={styles.linkNav}>Sobre Mim</Link>
         <Link href="#" className={styles.linkNav}>Contato</Link>
       </nav>
     </header>

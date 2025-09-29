@@ -1,0 +1,14 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page > *:last-child {
+    margin-top: auto;
+}
+
+/* Garantir que o footer fique no final */
+.page > footer {
+    margin-top: auto;
+}
