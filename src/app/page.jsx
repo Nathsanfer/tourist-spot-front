@@ -1,18 +1,25 @@
+"use client";
+
 import styles from "./page.module.css";
 
-import Image from "next/image";
-
 import Header from "../components/Header/Header.jsx";
-import Hero from "../components/Hero/Hero.jsx";
+import Footer from "../components/Footer/Footer.jsx";
+import HomeHero from "../components/HomeHero/HomeHero.jsx";
+import HomeIntro from "../components/HomeIntro/HomeIntro.jsx";
+import HomeRegions from "../components/HomeRegions/HomeRegions.jsx";
+import HomeTopSpots from "../components/HomeTopSpots/HomeTopSpots.jsx";
+import HomeContact from "../components/HomeContact/HomeContact.jsx";
 
 export default function Home() {
   return (
-    <div>
-
+    <div className={styles.page}>
       <Header />
-
-      <Hero />
-
+      <HomeHero />
+      <HomeIntro />
+      <HomeRegions />
+      <HomeTopSpots />
+      <HomeContact />
+      <Footer />
     </div>
   );
 }

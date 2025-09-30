@@ -1,0 +1,400 @@
+.regions {
+    padding: 6rem 0;
+    background: #f8f9fa;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 2.8rem;
+    font-family: var(--font-amaranth);
+    color: #333;
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    font-family: var(--font-comfortaa);
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.regionsGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 280px);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.regionCard {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.regionCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Layout organizado em formato interessante */
+.regionCard:nth-child(1) {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+.regionCard:nth-child(2) {
+    grid-column: 3 / 5;
+    grid-row: 1 / 2;
+}
+
+.regionCard:nth-child(3) {
+    grid-column: 3 / 4;
+    grid-row: 2 / 4;
+}
+
+.regionCard:nth-child(4) {
+    grid-column: 4 / 5;
+    grid-row: 2 / 4;
+}
+
+.regionCard:nth-child(5) {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+}
+
+.regionImage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.regionImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+    filter: brightness(0.8) contrast(1.1);
+}
+
+.regionCard:hover .regionImage img {
+    transform: scale(1.05);
+    filter: brightness(0.9) contrast(1.2);
+}
+
+/* Efeito adicional para cada região */
+.regionCard:nth-child(1) {
+    border: 3px solid rgba(45, 90, 45, 0.3);
+}
+
+.regionCard:nth-child(2) {
+    border: 3px solid rgba(212, 114, 42, 0.3);
+}
+
+.regionCard:nth-child(3) {
+    border: 3px solid rgba(139, 69, 19, 0.3);
+}
+
+.regionCard:nth-child(4) {
+    border: 3px solid rgba(30, 77, 114, 0.3);
+}
+
+.regionCard:nth-child(5) {
+    border: 3px solid rgba(93, 78, 117, 0.3);
+}
+
+.regionOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.7) 0%, 
+        rgba(0, 0, 0, 0.4) 50%, 
+        var(--region-color, rgba(0, 0, 0, 0.6)) 100%
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    transition: all 0.4s ease;
+}
+
+.regionCard:hover .regionOverlay {
+    background: linear-gradient(135deg, 
+        rgba(0, 0, 0, 0.8) 0%, 
+        rgba(0, 0, 0, 0.6) 50%, 
+        var(--region-color, rgba(0, 0, 0, 0.7)) 100%
+    );
+}
+
+.regionContent {
+    text-align: center;
+    color: white;
+    max-width: 300px;
+}
+
+.regionName {
+    font-size: 2.2rem;
+    font-family: var(--font-amaranth);
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.regionDescription {
+    font-size: 1.1rem;
+    font-family: var(--font-comfortaa);
+    margin: 0 0 1.5rem 0;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    line-height: 1.5;
+}
+
+.regionHighlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.highlight {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: var(--font-comfortaa);
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.regionCard:hover .highlight {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.exploreButton {
+    background: var(--highlights-primary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: var(--font-amaranth);
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(90, 159, 212, 0.4);
+}
+
+.exploreButton:hover {
+    background: #4a8bc2;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(90, 159, 212, 0.6);
+}
+
+/* CTA Section */
+.regionsCTA {
+    text-align: center;
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.ctaTitle {
+    font-size: 2rem;
+    font-family: var(--font-amaranth);
+    color: #333;
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+}
+
+.ctaDescription {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+    font-family: var(--font-comfortaa);
+    margin: 0 0 2rem 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ctaButton {
+    background: linear-gradient(135deg, var(--highlights-primary) 0%, #4a8bc2 100%);
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: var(--font-amaranth);
+    font-weight: 500;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(90, 159, 212, 0.4);
+}
+
+.ctaButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(90, 159, 212, 0.6);
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .regionsGrid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 250px);
+    }
+    
+    .regionCard:nth-child(1) {
+        grid-column: 1 / 3;
+        grid-row: 1 / 3;
+    }
+    
+    .regionCard:nth-child(2) {
+        grid-column: 3 / 4;
+        grid-row: 1 / 3;
+    }
+    
+    .regionCard:nth-child(3) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 5;
+    }
+    
+    .regionCard:nth-child(4) {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+    
+    .regionCard:nth-child(5) {
+        grid-column: 2 / 4;
+        grid-row: 4 / 5;
+    }
+}
+
+@media (max-width: 900px) {
+    .regionsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 300px);
+        gap: 1.5rem;
+    }
+    
+    .regionCard:nth-child(1) {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+    
+    .regionCard:nth-child(2) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+    
+    .regionCard:nth-child(3) {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    
+    .regionCard:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+    
+    .regionCard:nth-child(5) {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+}
+
+@media (max-width: 768px) {
+    .regions {
+        padding: 4rem 0;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .title {
+        font-size: 2.2rem;
+    }
+    
+    .regionsGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 350px);
+        gap: 1.5rem;
+    }
+    
+    .regionCard:nth-child(1),
+    .regionCard:nth-child(2),
+    .regionCard:nth-child(3),
+    .regionCard:nth-child(4),
+    .regionCard:nth-child(5) {
+        grid-column: 1 / 2;
+        grid-row: auto;
+    }
+    
+    .regionName {
+        font-size: 1.8rem;
+    }
+    
+    .regionsCTA {
+        padding: 2rem 1.5rem;
+    }
+    
+    .ctaTitle {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .regionsGrid {
+        grid-template-rows: repeat(5, 300px);
+    }
+    
+    .regionContent {
+        max-width: 250px;
+    }
+    
+    .regionName {
+        font-size: 1.6rem;
+    }
+    
+    .regionDescription {
+        font-size: 1rem;
+    }
+    
+    .regionHighlights {
+        margin-bottom: 1.5rem;
+    }
+    
+    .highlight {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+}

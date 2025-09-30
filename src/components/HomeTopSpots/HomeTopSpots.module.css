@@ -1,0 +1,496 @@
+.topSpots {
+    padding: 6rem 0;
+    background: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-size: 2.8rem;
+    font-family: var(--font-amaranth);
+    color: #333;
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #666;
+    font-family: var(--font-comfortaa);
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.loadingContainer,
+.errorContainer {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.loadingContainer p,
+.errorContainer p {
+    font-size: 1.1rem;
+    color: #666;
+    font-family: var(--font-comfortaa);
+    margin-top: 1rem;
+}
+
+.spotsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.spotCard {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.spotCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.featured {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.spotImage {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.featured .spotImage {
+    height: 350px;
+}
+
+.spotImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.4s ease;
+}
+
+.spotCard:hover .spotImage img {
+    transform: scale(1.1);
+}
+
+.spotRank {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: linear-gradient(135deg, var(--highlights-primary) 0%, #4a8bc2 100%);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-amaranth);
+    font-weight: 700;
+    font-size: 1.1rem;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(90, 159, 212, 0.4);
+}
+
+.spotOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.spotCard:hover .spotOverlay {
+    opacity: 1;
+}
+
+.overlayContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-family: var(--font-amaranth);
+    font-weight: 500;
+}
+
+.viewIcon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.spotContent {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.featured .spotContent {
+    padding: 2.5rem;
+}
+
+.spotHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.spotName {
+    font-size: 1.4rem;
+    font-family: var(--font-amaranth);
+    color: #333;
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.featured .spotName {
+    font-size: 1.8rem;
+}
+
+.spotLocation {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--highlights-primary);
+    font-family: var(--font-comfortaa);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.locationIcon {
+    font-size: 0.9rem;
+}
+
+.spotDescription {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    font-family: var(--font-comfortaa);
+    margin: 0;
+}
+
+.featured .spotDescription {
+    font-size: 1.1rem;
+}
+
+.spotRating {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #f0f0f0;
+}
+
+.stars {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.starFull {
+    color: #ffd700;
+    font-size: 1.1rem;
+}
+
+.starHalf {
+    color: #ffd700;
+    font-size: 1.1rem;
+}
+
+.starEmpty {
+    color: #e0e0e0;
+    font-size: 1.1rem;
+}
+
+.ratingValue {
+    font-size: 1rem;
+    color: #666;
+    font-family: var(--font-amaranth);
+    font-weight: 600;
+}
+
+/* See More Section */
+.seeMoreSection {
+    text-align: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 3rem;
+    border-radius: 20px;
+    margin-top: 2rem;
+}
+
+.seeMoreTitle {
+    font-size: 2rem;
+    font-family: var(--font-amaranth);
+    color: #333;
+    margin: 0 0 1rem 0;
+    font-weight: 600;
+}
+
+.seeMoreDescription {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+    font-family: var(--font-comfortaa);
+    margin: 0 0 2rem 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.seeMoreButton {
+    background: linear-gradient(135deg, var(--highlights-primary) 0%, #4a8bc2 100%);
+    color: white;
+    padding: 1.2rem 2.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: var(--font-amaranth);
+    font-weight: 500;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(90, 159, 212, 0.4);
+}
+
+.seeMoreButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(90, 159, 212, 0.6);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .spotsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .featured {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    
+    .featured .spotImage {
+        height: 250px;
+    }
+}
+
+@media (max-width: 768px) {
+    .topSpots {
+        padding: 4rem 0;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .title {
+        font-size: 2.2rem;
+    }
+    
+    .spotsGrid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .featured {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    
+    .spotImage,
+    .featured .spotImage {
+        height: 200px;
+    }
+    
+    .spotContent {
+        padding: 1.5rem;
+    }
+    
+    .featured .spotContent {
+        padding: 1.5rem;
+    }
+    
+    .spotName {
+        font-size: 1.3rem;
+    }
+    
+    .featured .spotName {
+        font-size: 1.4rem;
+    }
+    
+    .seeMoreSection {
+        padding: 2rem 1.5rem;
+    }
+    
+    .seeMoreTitle {
+        font-size: 1.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .spotsGrid {
+        grid-template-columns: 1fr;
+    }
+    
+    .spotCard {
+        margin: 0 auto;
+        max-width: 350px;
+    }
+    
+    .spotRank {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .spotName {
+        font-size: 1.2rem;
+    }
+    
+    .spotDescription {
+        font-size: 0.95rem;
+    }
+}
+
+/* Estilos para informações extras do card com maior nota */
+.extraInfo {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #f0f0f0;
+}
+
+.extraInfoHeader {
+    margin-bottom: 1rem;
+}
+
+.extraInfoTitle {
+    font-size: 1.2rem;
+    font-family: var(--font-amaranth);
+    color: var(--highlights-primary);
+    margin: 0;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.extraInfoTitle::before {
+    content: "✨";
+    font-size: 1.1rem;
+}
+
+.sectionsPreview {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sectionPreview {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 12px;
+    border-left: 3px solid var(--highlights-primary);
+    transition: all 0.3s ease;
+}
+
+.sectionPreview:hover {
+    background: #f0f0f0;
+    transform: translateX(5px);
+}
+
+.sectionPreviewTitle {
+    font-size: 1rem;
+    font-family: var(--font-amaranth);
+    color: #333;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.sectionPreviewText {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #666;
+    font-family: var(--font-comfortaa);
+    margin: 0;
+}
+
+.moreInfoIndicator {
+    text-align: center;
+    padding: 0.8rem;
+    background: linear-gradient(135deg, var(--highlights-primary) 0%, #4a8bc2 100%);
+    color: white;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: var(--font-amaranth);
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+/* Responsividade para informações extras */
+@media (max-width: 768px) {
+    .extraInfo {
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+    
+    .extraInfoTitle {
+        font-size: 1.1rem;
+    }
+    
+    .sectionPreview {
+        padding: 0.8rem;
+    }
+    
+    .sectionPreviewTitle {
+        font-size: 0.95rem;
+    }
+    
+    .sectionPreviewText {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .sectionsPreview {
+        gap: 0.8rem;
+    }
+    
+    .sectionPreview {
+        padding: 0.7rem;
+    }
+    
+    .moreInfoIndicator {
+        font-size: 0.8rem;
+        padding: 0.6rem;
+    }
+}
