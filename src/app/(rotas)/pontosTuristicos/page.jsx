@@ -15,10 +15,25 @@ import RegionBanner from "../../../components/RegionBanner/RegionBanner.jsx";
 // Importando dados de configuração das regiões
 import { regionConfigs } from "../../../data/regionData.jsx";
 
+// Importando estilos
+import styles from "./pontosTuristicos.module.css";
+
 export default function PontosTuristicos() {
   const [spots, setSpots] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  // Detectar se é mobile para otimizações específicas
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobileView(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     async function fetchSpots() {
@@ -47,27 +62,23 @@ export default function PontosTuristicos() {
 
   if (loading) {
     return (
-      <div>
-        <Header />
-        <Banner />
-        <SearchBar />
-        <div style={{ 
-          display: 'flex', 
-          justifyContent: 'center', 
-          alignItems: 'center', 
-          minHeight: '400px',
-          flexDirection: 'column',
-          gap: '16px'
-        }}>
-          <Spin size="large" />
-          <p style={{ 
-            fontSize: '16px', 
-            color: '#666', 
-            margin: 0,
-            fontFamily: 'var(--font-comfortaa)'
-          }}>
-            Carregando pontos turísticos...
-          </p>
+      <div className={styles.pageContainer}>
+        <div className={styles.mainWrapper}>
+          <div className={styles.headerSection}>
+            <Header />
+          </div>
+          <div className={styles.bannerSection}>
+            <Banner />
+          </div>
+          <div className={styles.searchSection}>
+            <SearchBar />
+          </div>
+          <div className={styles.loadingContainer}>
+            <Spin size="large" />
+            <p className={styles.loadingText}>
+              Carregando pontos turísticos...
+            </p>
+          </div>
         </div>
       </div>
     );
@@ -75,79 +86,83 @@ export default function PontosTuristicos() {
 
   if (error) {
     return (
-      <div>
-        <Header />
-        <Banner />
-        <SearchBar />
-        <div style={{ 
-          display: 'flex', 
-          justifyContent: 'center', 
-          alignItems: 'center', 
-          minHeight: '400px',
-          flexDirection: 'column',
-          gap: '16px'
-        }}>
-          <div style={{ 
-            fontSize: '48px',
-            color: '#ff4d4f'
-          }}>
-            ⚠️
+      <div className={styles.pageContainer}>
+        <div className={styles.mainWrapper}>
+          <div className={styles.headerSection}>
+            <Header />
           </div>
-          <p style={{ 
-            fontSize: '16px', 
-            color: '#ff4d4f', 
-            margin: 0,
-            fontFamily: 'var(--font-comfortaa)',
-            textAlign: 'center'
-          }}>
-            Erro ao carregar pontos turísticos: {error}
-          </p>
+          <div className={styles.bannerSection}>
+            <Banner />
+          </div>
+          <div className={styles.searchSection}>
+            <SearchBar />
+          </div>
+          <div className={styles.errorContainer}>
+            <div className={styles.errorIcon}>⚠️</div>
+            <p className={styles.errorText}>
+              Erro ao carregar pontos turísticos: {error}
+            </p>
+          </div>
         </div>
       </div>
     );
   }
 
   return (
-    <div>
-      <Header />
-      <Banner />
-      <SearchBar />
-      
-      {uniqueRegions.map((region) => {
-        const config = regionConfigs[region];
+    <div className={styles.pageContainer}>
+      <div className={styles.mainWrapper}>
+        <div className={styles.headerSection}>
+          <Header />
+        </div>
+        <div className={styles.bannerSection}>
+          <Banner />
+        </div>
+        <div className={styles.searchSection}>
+          <SearchBar />
+        </div>
         
-        if (!config) {
-          console.warn(`Configuração não encontrada para a região: ${region}`);
-          return null;
-        }
-        
-        return (
-          <div key={region}>
-            <RegionBanner 
-              regionName={region}
-              regionSubtitle={config.subtitle}
-              regionDescription={config.description}
-              regionHighlight={config.highlight}
-              leftImage={config.leftImage}
-              leftImageAlt={config.leftImageAlt}
-              topDestinationImage={config.topDestinationImage}
-              topDestinationImageAlt={config.topDestinationImageAlt}
-              highlightImage={config.highlightImage}
-              highlightImageAlt={config.highlightImageAlt}
-              tallImage={config.tallImage}
-              tallImageAlt={config.tallImageAlt}
-              highlights={config.highlights}
-              stats={config.stats}
-            />
-            <TouristList 
-              spots={spots}
-              loading={false}
-              error={null}
-              region={region}
-            />
-          </div>
-        );
-      })}
+        <main className={styles.contentSection} role="main">
+          {uniqueRegions.map((region, index) => {
+            const config = regionConfigs[region];
+            
+            if (!config) {
+              console.warn(`Configuração não encontrada para a região: ${region}`);
+              return null;
+            }
+            
+            return (
+              <section 
+                key={region} 
+                className={styles.regionSection}
+                aria-label={`Pontos turísticos da região ${region}`}
+              >
+                <RegionBanner 
+                  regionName={region}
+                  regionSubtitle={config.subtitle}
+                  regionDescription={config.description}
+                  regionHighlight={config.highlight}
+                  leftImage={config.leftImage}
+                  leftImageAlt={config.leftImageAlt}
+                  topDestinationImage={config.topDestinationImage}
+                  topDestinationImageAlt={config.topDestinationImageAlt}
+                  highlightImage={config.highlightImage}
+                  highlightImageAlt={config.highlightImageAlt}
+                  tallImage={config.tallImage}
+                  tallImageAlt={config.tallImageAlt}
+                  highlights={config.highlights}
+                  stats={config.stats}
+                />
+                <TouristList 
+                  spots={spots}
+                  loading={false}
+                  error={null}
+                  region={region}
+                />
+              </section>
+            );
+          })}
+        </main>
+      </div>
     </div>
   );
 }
