@@ -20,6 +20,9 @@ export const metadata = {
   title: "Blog de Pontos Turísticos",
   description:
     "Projeto de um blog de pontos turísticos, consumindo uma API externa.",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({ children }) {
