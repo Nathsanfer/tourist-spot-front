@@ -11,6 +11,7 @@ import Banner from "../../../components/Banner/Banner.jsx";
 import SearchBar from "../../../components/SearchBar/SearchBar.jsx";
 import TouristList from "../../../components/TouristList/TouristList.jsx";
 import RegionBanner from "../../../components/RegionBanner/RegionBanner.jsx";
+import Footer from "../../../components/Footer/Footer.jsx"
 
 // Importando dados de configuração das regiões
 import { regionConfigs } from "../../../data/regionData.jsx";
@@ -162,6 +163,8 @@ export default function PontosTuristicos() {
             );
           })}
         </main>
+
+        <Footer />
       </div>
     </div>
   );
